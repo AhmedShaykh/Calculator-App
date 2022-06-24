@@ -1,7 +1,8 @@
 import React from "react";
 
-async function QuizApi(totalQuestions: number, level: string) {
+export const QuizApi = async (totalQuestions: number, level: string) => {
     const res = await fetch(`https://opentdb.com/api.php?amount=${totalQuestions}&difficulty=${level}&type=multiple`);
-}
+    let { results } = await res.json();
 
-export default QuizApi;
+    return results;
+}
