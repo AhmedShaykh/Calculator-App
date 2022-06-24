@@ -1,2 +1,1 @@
-# React Quiz App In TypeScript
- 
+# React Quiz App In TypeScript!
