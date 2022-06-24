@@ -11,7 +11,7 @@ function App() {
 
   useEffect(() => {
     async function fetchData() {
-      const questions = await QuizApi(5,'easy');
+      const questions: QuizType[] = await QuizApi(5,'easy');
       console.log(questions);
       setQuiz(questions)
     }
