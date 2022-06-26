@@ -1,7 +1,8 @@
 import React , { useState , useEffect } from 'react';
 import './App.css';
+import QuestionCard from './Components/QuestionCard';
 import { QuizApi } from './Services/QuizApi';
-import { QuizType } from './Types/QuizTypes';
+import { QuizType , QuestionType } from './Types/QuizTypes';
 
 function App() {
 
@@ -11,7 +12,7 @@ function App() {
 
   useEffect(() => {
     async function fetchData() {
-      const questions: QuizType[] = await QuizApi(5,'easy');
+      const questions: QuestionType[] = await QuizApi(5,'easy');
       console.log(questions);
       setQuiz(questions)
     }
@@ -19,10 +20,11 @@ function App() {
   }, []);
 
   return (
-    <div className="App-header">
-      <h1>
-        Hello React TypeScript :)
-      </h1>
+    <div className="App">
+      <QuestionCard 
+      options={quiz[0].options}
+      question={quiz[0].question}
+      />
     </div>
   );
 }

@@ -1,10 +1,10 @@
 import React from 'react';
 
-const QuestionCard = () => {
+const QuestionCard: React.FC<any> = ({ option, question }) => {
     return (
         <div className="question-container">
             <div className="question">
-                <h4></h4>
+                <h2>{question}</h2>
             </div>
         </div>
     )
