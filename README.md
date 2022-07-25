@@ -1,1 +1,1 @@
-# Build React Quiz App In TypeScript!
+Quiz App In React TypeScript!
