@@ -1,1 +1,1 @@
-# React TypeScript Project!
+# Calculator App In React TypeScript!
