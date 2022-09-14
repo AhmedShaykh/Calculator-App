@@ -1,5 +1,6 @@
 import { Container, Grid, Paper, styled } from '@mui/material';
 import React, { useState } from 'react';
+import { GridOperationButton } from './Components/GridOperationButton';
 
 const CalculatorBase = styled(Paper)(({ theme }) => ({
   padding: theme.spacing(2),
@@ -21,7 +22,7 @@ function App() {
   const [currentValue, setCurrentValue] = useState("0");
   const [operation, setOperation] = useState("");
 
-  const selectedOperation = (operation: string) => {
+  const selectOperation = (operation: string) => {
     setOperation(operation)
   }
 
@@ -37,6 +38,12 @@ function App() {
             <OutputContainer>
               {currentValue}
             </OutputContainer>
+          </Grid>
+          <Grid item container columnSpacing={1}>
+            <GridOperationButton
+              operation={"AC"}
+              selectOperation={selectOperation}
+              selectedOperation={operation} />
           </Grid>
         </Grid>
       </CalculatorBase>
