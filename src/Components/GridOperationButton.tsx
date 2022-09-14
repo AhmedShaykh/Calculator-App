@@ -7,8 +7,8 @@ interface GridOperationButtonProps {
 }
 
 const StyledButton = styled(Button)<{ selected: boolean }>((props) => ({
-    backgroundColor: "#2b2e2c",
-    borderColor: props.selected ? "#fff" : "#39393d",
+    backgroundColor: "#142d2e",
+    borderColor: props.selected ? "#4c7070" : "#39393d",
 }))
 
 export const GridOperationButton: React.FC<GridOperationButtonProps> = ({
@@ -17,7 +17,7 @@ export const GridOperationButton: React.FC<GridOperationButtonProps> = ({
     selectedOperation,
 }) => {
     return (
-        <Grid item>
+        <Grid item xs={3}>
             <StyledButton fullWidth variant="outlined"
                 onClick={() => selectOperation(operation)}
                 selected={selectedOperation === operation} >
