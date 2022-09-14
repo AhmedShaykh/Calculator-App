@@ -1,5 +1,5 @@
-import { Container, Paper, styled } from '@mui/material';
-import React from 'react';
+import { Container, Grid, Paper, styled } from '@mui/material';
+import React, { useState } from 'react';
 
 const CalculatorBase = styled(Paper)(({ theme }) => ({
   padding: theme.spacing(2),
@@ -7,11 +7,38 @@ const CalculatorBase = styled(Paper)(({ theme }) => ({
   borderRadius: 15
 }))
 
+const OutputContainer = styled('div')(({ theme }) => ({
+  width: "100%",
+  textAlign: "right",
+  height: "2em",
+  padding: theme.spacing(2),
+  fontSize: "3em",
+  overFlow: "hidden"
+}))
+
 function App() {
+
+  const [currentValue, setCurrentValue] = useState("0");
+  const [operation, setOperation] = useState("");
+
+  const selectedOperation = (operation: string) => {
+    setOperation(operation)
+  }
+
+  const setDigit = (digit: string) => {
+    setCurrentValue(digit)
+  }
+
   return (
     <Container maxWidth="sm">
       <CalculatorBase elevation={3}>
-        Hello World!
+        <Grid container spacing={1}>
+          <Grid item xs={12}>
+            <OutputContainer>
+              {currentValue}
+            </OutputContainer>
+          </Grid>
+        </Grid>
       </CalculatorBase>
     </Container>
   );
