@@ -104,7 +104,7 @@ function App() {
 
   return (
     <Container maxWidth="sm">
-      <CalculatorBase elevation={3}>
+      <CalculatorBase style={{ marginTop: "50px" }} elevation={3}>
         <Grid container spacing={1}>
           <Grid item xs={12}>
             <OutputContainer>

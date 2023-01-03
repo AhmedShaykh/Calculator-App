@@ -1,3 +1,3 @@
 # Calculator App In React TypeScript!
 
-https://react-calculator-mui-ts.surge.sh/
+http://react-ts-calculator-app.surge.sh/
